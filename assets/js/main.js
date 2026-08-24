@@ -41,3 +41,53 @@ const activateNav = () => {
 
 window.addEventListener("scroll", activateNav, { passive: true });
 activateNav();
+
+// 没有外部链接的奖项：点击后预览证书图片
+const awardDialog = document.getElementById("award-preview-dialog");
+const awardImage = document.getElementById("award-preview-image");
+const awardTitle = document.getElementById("award-preview-title");
+const awardClose = awardDialog?.querySelector(".award-dialog-close");
+const awardTriggers = document.querySelectorAll(".award-preview");
+let lastAwardTrigger = null;
+
+const closeAwardDialog = () => {
+  if (awardDialog?.open) awardDialog.close();
+};
+
+awardTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", () => {
+    const title = trigger.dataset.awardTitle || "奖项图片";
+    const image = trigger.dataset.awardImage || "assets/ward/avatar.avif";
+
+    lastAwardTrigger = trigger;
+    awardImage.src = image;
+    awardImage.alt = `${title}图片`;
+    awardTitle.textContent = title;
+    awardDialog.showModal();
+    document.body.classList.add("award-dialog-open");
+  });
+});
+
+awardClose?.addEventListener("click", closeAwardDialog);
+
+awardDialog?.addEventListener("click", (event) => {
+  if (event.target === awardDialog) closeAwardDialog();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && awardDialog?.open) {
+    event.preventDefault();
+    closeAwardDialog();
+  }
+});
+
+awardDialog?.addEventListener("close", () => {
+  document.body.classList.remove("award-dialog-open");
+  lastAwardTrigger?.focus();
+});
+
+awardImage?.addEventListener("error", () => {
+  if (!awardImage.src.endsWith("/assets/ward/avatar.avif")) {
+    awardImage.src = "assets/ward/avatar.avif";
+  }
+});

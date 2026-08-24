@@ -27,7 +27,7 @@
   />
 
   <link rel="icon" href="assets/images/webicon.png" />
-  <link rel="stylesheet" href="assets/css/style.css?v=20260822-2" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20260822-5" />
 
   <!-- 图标库：如果以后想完全离线，也可以把这项删掉并改成文字图标 -->
   <link
@@ -167,10 +167,26 @@
             </a>
           </li>
           <li>
-            <span class="award-item">全国大学生计算机设计大赛陕西省一等奖（2026）</span>
+            <button
+              class="award-link award-preview"
+              type="button"
+              data-award-image="assets/ward/计算机设计大赛2026.jpg"
+              data-award-title="全国大学生计算机设计大赛陕西省一等奖（2026）"
+              aria-haspopup="dialog"
+            >
+              <span>全国大学生计算机设计大赛陕西省一等奖（2026）</span>
+            </button>
           </li>
           <li>
-            <span class="award-item">全国大学生数学竞赛陕西省二等奖（2025）</span>
+            <button
+              class="award-link award-preview"
+              type="button"
+              data-award-image="assets/ward/数学竞赛2025.jpg"
+              data-award-title="全国大学生数学竞赛陕西省二等奖（2025）"
+              aria-haspopup="dialog"
+            >
+              <span>全国大学生数学竞赛陕西省二等奖（2025）</span>
+            </button>
           </li>
           <li>
             <a
@@ -183,7 +199,15 @@
             </a>
           </li>
           <li>
-            <span class="award-item">2026年大学生创新创业训练计划项目省级立项（2025）</span>
+            <button
+              class="award-link award-preview"
+              type="button"
+              data-award-image="assets/ward/avatar.avif"
+              data-award-title="2026年大学生创新创业训练计划项目省级立项（2025）"
+              aria-haspopup="dialog"
+            >
+              <span>大学生创新创业训练计划项目省级立项（2025）</span>
+            </button>
           </li>
         </ul>
       </section>
@@ -192,7 +216,15 @@
         <h3 class="section-title">奖学金</h3>
         <ul class="intro-list">
           <li>
-            <strong>2025年西北大学一等奖学金</strong>
+            <button
+              class="award-link award-preview"
+              type="button"
+              data-award-image="assets/ward/西大一等奖学金2025.jpg"
+              data-award-title="西北大学一等奖学金"
+              aria-haspopup="dialog"
+            >
+              <span>西北大学一等奖学金</span>
+            </button>
           </li>
         </ul>
       </section>
@@ -292,6 +324,32 @@
     </article>
   </main>
 
-  <script src="assets/js/main.js?v=20260822-2"></script>
+  <dialog
+    class="award-dialog"
+    id="award-preview-dialog"
+    aria-labelledby="award-preview-title"
+  >
+    <div class="award-dialog-panel">
+      <figure>
+        <img
+          id="award-preview-image"
+          src="assets/ward/avatar.avif"
+          alt=""
+        />
+      </figure>
+      <div class="award-dialog-footer">
+        <p class="award-dialog-caption" id="award-preview-title"></p>
+        <button
+          class="award-dialog-close"
+          type="button"
+          aria-label="关闭奖项图片预览"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="assets/js/main.js?v=20260822-5"></script>
 </body>
 </html>

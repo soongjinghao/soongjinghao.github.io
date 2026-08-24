@@ -403,17 +403,24 @@ img {
   font-size: 0.9em;
 }
 
-.award-link,
-.award-item {
+.award-link {
   position: relative;
   display: block;
+  width: 100%;
   min-height: 42px;
+  margin: 0;
   padding: 7px 42px 7px 9px;
   color: var(--text);
+  background: transparent;
   border: 1px solid transparent;
   border-radius: 9px;
+  appearance: none;
+  font-family: inherit;
+  font-size: 1rem;
   font-weight: 650;
   line-height: 1.55;
+  text-align: left;
+  cursor: pointer;
   transition:
     color 0.18s ease,
     background-color 0.18s ease,
@@ -456,8 +463,90 @@ img {
   outline-offset: 2px;
 }
 
-.award-item {
-  padding-right: 9px;
+.award-dialog {
+  width: min(92vw, 920px);
+  max-width: none;
+  max-height: 92vh;
+  padding: 0;
+  overflow: hidden;
+  color: var(--text);
+  background: transparent;
+  border: 0;
+}
+
+.award-dialog::backdrop {
+  background: rgba(20, 20, 22, 0.68);
+  backdrop-filter: blur(5px);
+}
+
+.award-dialog-panel {
+  position: relative;
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+}
+
+.award-dialog figure {
+  margin: 0;
+}
+
+.award-dialog img {
+  display: block;
+  width: 100%;
+  max-height: calc(92vh - 92px);
+  object-fit: contain;
+  background: var(--surface-soft);
+  border-radius: 10px;
+}
+
+.award-dialog-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 2px 0;
+}
+
+.award-dialog-caption {
+  min-width: 0;
+  flex: 1;
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.award-dialog-close {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  padding: 0;
+  place-items: center;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  font: inherit;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.award-dialog-close:hover,
+.award-dialog-close:focus-visible {
+  color: var(--accent);
+  border-color: rgba(187, 36, 64, 0.28);
+  transform: rotate(4deg);
+}
+
+body.award-dialog-open {
+  overflow: hidden;
 }
 
 /* =========================
