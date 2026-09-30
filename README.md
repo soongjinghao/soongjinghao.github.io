@@ -2,7 +2,7 @@
 
 我的个人主页，主要用于展示个人简介、教育经历、项目经历、技术栈、竞赛经历与近期动态。
 
-🌐 **在线访问：** https://song-jinghao.github.io/
+🌐 **在线访问：** https://soongjinghao.github.io/
 
 
 ## 项目结构
