@@ -25,8 +25,8 @@ song-jinghao.github.io/
 克隆项目：
 
 ```bash
-git clone https://github.com/song-jinghao/song-jinghao.github.io.git
-cd song-jinghao.github.io
+git clone https://github.com/soongjinghao/soongjinghao.github.io.git
+cd soongjinghao.github.io
 ```
 
 可以直接打开 `index.html` 进行预览，也可以启动一个本地静态服务器：
