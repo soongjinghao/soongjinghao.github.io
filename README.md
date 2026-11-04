@@ -8,7 +8,7 @@
 ## 项目结构
 
 ```text
-song-jinghao.github.io/
+soongjinghao.github.io/
 ├── index.html
 ├── README.md
 └── assets/
